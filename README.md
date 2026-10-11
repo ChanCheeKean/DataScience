@@ -4,7 +4,7 @@
 
 This repository is built on a simple belief: you cannot truly master AI by calling `model.fit()`. To understand how modern AI systems actually work, you need to **build them from scratch** — derive the math, implement the algorithms, and watch the gradients flow.
 
-Every notebook in this repository dissects a core AI concept by implementing it from the ground up using raw PyTorch and NumPy. We go from the bias-variance tradeoff all the way to building GPT, LLaMA, DeepSeek, and GRPO — the same algorithm behind DeepSeek-R1. If a concept matters, we don't just explain it. We build it, break it, and rebuild it until the intuition is earned.
+Every notebook in this repository dissects a core AI concept by implementing it from the ground up using raw PyTorch and NumPy. We go from the bias-variance tradeoff all the way to building GPT, LLaMA, DeepSeek, and GRPO — the same algorithm behind DeepSeek-R1 — and on to agent harnesses, memory systems, and vision-language models. If a concept matters, we don't just explain it. We build it, break it, and rebuild it until the intuition is earned.
 
 > *"What I cannot create, I do not understand."* — Richard Feynman
 
@@ -46,13 +46,20 @@ Every notebook in this repository dissects a core AI concept by implementing it 
 | 02 | [Recurrent Classifier](03%20-%20Large%20Language%20Model/01%20-%20RNN/02%20-%20Recurrent%20Classifier.ipynb) | Sentiment classification on IMDb using RNN/LSTM with padding and packing |
 | 03 | [RNN with Attention](03%20-%20Large%20Language%20Model/01%20-%20RNN/03%20-%20RNN%20with%20Attention.ipynb) | Seq2seq bottleneck problem, Bahdanau vs Luong attention for date format translation |
 
+#### Training Strategy
+
+| # | Notebook | Description |
+|---|----------|-------------|
+| 01 | [Data Processing](03%20-%20Large%20Language%20Model/02%20-%20Training%20Strategy%20/01%20-%20Data%20Processing.ipynb) | Pretraining data pipelines — heuristic filters, deduplication, CCNet perplexity and classifier quality filtering, data mixing and annealing |
+| 02 | [Distributed Training](03%20-%20Large%20Language%20Model/02%20-%20Training%20Strategy%20/02%20-%20Distributed%20Training.ipynb) | GPU programming to multi-GPU training — SIMT, memory hierarchy, roofline model, Triton kernels, profiling, DDP, tensor and pipeline parallelism |
+
 #### Transformer Models
 
 | # | Notebook | Description |
 |---|----------|-------------|
-| A01 | [Pretrained Model - HuggingFace](03%20-%20Large%20Language%20Model/03%20-%20Transformers%20Model/A01%20-%20Pretrained%20Model%20-%20HuggingFace.ipynb) | Using HuggingFace pipelines and pretrained models for text classification |
-| A02 | [Attention Mechanism](03%20-%20Large%20Language%20Model/03%20-%20Transformers%20Model/A02%20-%20Attention%20Mechanism.ipynb) | Self-attention and scaled dot-product, multi-head/MQA/GQA, Flash and sliding-window attention |
-| A03 | [Transformer](03%20-%20Large%20Language%20Model/03%20-%20Transformers%20Model/A03%20-%20Transformer.ipynb) | Full transformer architecture from scratch — multi-head attention, positional encoding, encoder-decoder |
+| A01 | [Attention Mechanism](03%20-%20Large%20Language%20Model/03%20-%20Transformers%20Model/A01%20-%20Attention%20Mechanism.ipynb) | Self-attention and scaled dot-product, multi-head attention, Flash and sliding-window/sparse attention |
+| A02 | [Transformer](03%20-%20Large%20Language%20Model/03%20-%20Transformers%20Model/A02%20-%20Transformer.ipynb) | Full transformer architecture from scratch — masking, positional encoding, multi-head attention, encoder-decoder |
+| A03 | [Looped Transformer](03%20-%20Large%20Language%20Model/03%20-%20Transformers%20Model/A03%20-%20Looped%20Transformer.ipynb) | Recurrent-depth transformer — weight-shared looped blocks, truncated backprop, test-time compute scaling on parity |
 | B01 | [BERT](03%20-%20Large%20Language%20Model/03%20-%20Transformers%20Model/B01%20-%20BERT.ipynb.ipynb) | Bidirectional encoder — WordPiece tokenization, MLM, NSP, and the fine-tuning paradigm |
 | B02 | [ColBERT](03%20-%20Large%20Language%20Model/03%20-%20Transformers%20Model/B02%20-%20Colbert.ipynb) | Late interaction retrieval — MaxSim scoring, query augmentation, token-level matching |
 | C01 | [nanoGPT](03%20-%20Large%20Language%20Model/03%20-%20Transformers%20Model/C01%20-%20nanoGPT.ipynb) | GPT-2 from scratch — byte-level BPE tokenization, causal self-attention, autoregressive decoding |
@@ -89,35 +96,51 @@ Every notebook in this repository dissects a core AI concept by implementing it 
 | # | Notebook | Description |
 |---|----------|-------------|
 | 01 | [Distillation](03%20-%20Large%20Language%20Model/06%20-%20Model%20Compression/01%20-%20Distillation.ipynb) | Knowledge distillation — response-level SFT, logit-level KD, rejection sampling |
-| 02 | [Model Pruning](03%20-%20Large%20Language%20Model/06%20-%20Model%20Compression/02%20-%20Model%20Pruning.ipynb) | Unstructured and structured pruning — magnitude-based, layer-wise, and global strategies |
+| 02 | [Model Pruning](03%20-%20Large%20Language%20Model/06%20-%20Model%20Compression/02%20-%20Model%20Pruning.ipynb) | Unstructured and structured pruning — layer-wise vs global, importance criteria, the coupling problem, iterative vs one-shot |
 | 03 | [Quantization](03%20-%20Large%20Language%20Model/06%20-%20Model%20Compression/03%20-%20Quantization.ipynb) | FP32 to INT4 — numeric formats, quantization schemes, memory-accuracy tradeoffs |
 
 #### Agentic LLM
 
 | # | Notebook | Description |
 |---|----------|-------------|
-| A01 | [LLM Prompting](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A01%20-%20LLM_Prompting.ipynb) | System prompt design patterns — persona, task-specific, guard-rails, few-shot, chain-of-thought |
-| A02 | [LangChain](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A02%20-%20Langchain.ipynb) | LangChain fundamentals — data loaders, splitters, vectorstores, embeddings, retrieval chains |
-| A03 | [Agent Harness](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A03%20-%20Agent%20Harness.ipynb) | The agent loop primitive — tool calling, finish reasons, state management from scratch |
-| A04 | [Agent Gateway](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A04%20-%20Agent%20Gateway.ipynb) | Intelligence layers — BASE, IDENTITY, SOUL, MEMORY, SKILLS, TOOLS, CONTEXT, HEARTBEAT |
-| A05 | [Agent Operation](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A05%20-%20Agent%20Operation.ipynb) | Production observability — logs, metrics, traces, cost attribution, latency profiling |
-| A06 | [Self Learning Loop](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A06%20-%20Self%20Learning%20Loop.ipynb) | Reflexion and verbal gradients — self-critique, reflection injection, iterative improvement |
-| B01 | [LangGraph Agent](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/B01%20-%20Langraph_Agent.ipynb) | Cyclic state graphs with LangGraph — conditional edges, tool routing, RAG agents, LangSmith tracing |
-| B02 | [Claude Code](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/B02%20-%20Claude%20Code.ipynb) | Reverse-engineering Claude Code's agent loop — stop reasons, tool execution, harness internals |
+| A01 | [LLM Prompting](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A01%20-%20LLM_Prompting.ipynb) | Prompt design patterns, few-shot and CoT/ToT/GoT, structured output, prompt injection defenses, LLM-as-judge |
+| A02 | [LangChain](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A02%20-%20Langchain.ipynb) | LangChain fundamentals — loaders, splitters, vectorstores, retrievers, memory, chains, agents, and LCEL |
+| A03 | [Agent Harness](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A03%20-%20Agent%20Harness.ipynb) | The agent loop from scratch — tool system, planning, subagents, skills, context compaction, task system, agent teams |
+| A04 | [Agent Gateway](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A04%20-%20Agent%20Gateway.ipynb) | Intelligence layers (BASE → HEARTBEAT), channel abstraction, routing, cron, delivery queues, resilience, concurrency lanes |
+| A05 | [Agent Operation](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A05%20-%20Agent%20Operation.ipynb) | Running agents in production — observability, token budgeting, rate limiting, prompt caching, model routing, circuit breakers |
+| A06 | [Self Evolution Agent](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A06%20-%20Self%20Evolution%20Agent.ipynb) | Agents that improve themselves — Reflexion, self-rewarding evaluation, APE, and GEPA evolutionary prompt optimization |
+| A07 | [AI Agent Memory](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A07%20-%20AI%20Agent%20Memory.ipynb) | Memory architectures — Mem0 KV store, MemGPT/Letta tiers, Zep temporal knowledge graphs, hybrid retrieval, procedural memory |
+| A08 | [Sleep Time Consolidation](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A08%20-%20Sleep%20Time%20Consolidation.ipynb) | Offline compute for agents — sleep-time rethinking, dream consolidation, reflection, and Dynamic Cheatsheet |
+| B01 | [LangGraph Agent](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/B01%20-%20Langraph_Agent.ipynb) | Cyclic state graphs with LangGraph — ReAct, plan-and-execute, memory, multi-agent supervisors, MCP, LangSmith tracing |
+| B02 | [Claude Code](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/B02%20-%20Claude%20Code.ipynb) | Rebuilding Claude Code's harness — agent loop, tools, permissions, subagents, compaction, MCP, memory, hooks |
+| B03 | [Code Agent](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/B03%20-%20Code%20Agent.ipynb) | Multi-agent repository auditing — code knowledge graphs, structural detectors, inter-procedural data flow, LLM validators |
 
 #### Production & Inference
 
 | # | Notebook | Description |
 |---|----------|-------------|
-| 01 | [Generation](03%20-%20Large%20Language%20Model/07%20-%20Production%20%26%20Inference/01%20-%20Generation.ipynb) | Text generation from scratch — KV-cache, sampling strategies, batched/continuous batching, speculative decoding |
+| 01 | [Generation](03%20-%20Large%20Language%20Model/07%20-%20Production%20%26%20Inference/01%20-%20Generation.ipynb) | Text generation from scratch — KV-cache, greedy/beam/sampling, batched and continuous batching, speculative and constrained decoding |
 
 #### LLM Evaluation
 
 | # | Notebook | Description |
 |---|----------|-------------|
-| 01 | [LLM Evaluation](03%20-%20Large%20Language%20Model/08%20-%20LLM%20Eval/01%20-%20LLM%20Evaluation.ipynb) | Perplexity, intrinsic evaluation metrics — measuring how well a model predicts text |
+| 01 | [LLM Evaluation](03%20-%20Large%20Language%20Model/08%20-%20LLM%20Eval/01%20-%20LLM%20Evaluation.ipynb) | Perplexity, BLEU/ROUGE, BERTScore, calibration (ECE), LLM-as-a-judge with bias mitigation, and Elo ratings with bootstrap CIs |
 
 ### 04 - Computer Vision
+
+#### Image Processing
+
+| # | Notebook | Description |
+|---|----------|-------------|
+| 1 | [Image Processing](04%20-%20Computer%20Vision/00%20-%20Image%20Processing/1%20-%20Image_Processing.ipynb) | OpenCV basics — I/O, drawing, blending, thresholding, blurring, morphology, color filtering |
+| 2 | [Image Detection](04%20-%20Computer%20Vision/00%20-%20Image%20Processing/2%20-%20Image%20Detection.ipynb) | Template matching, corners, Canny edges, contours, ORB feature matching, face and QR detection |
+| 3 | [Image Analysis](04%20-%20Computer%20Vision/00%20-%20Image%20Processing/3%20-%20Image%20Analysis.ipynb) | Histograms and equalization, dominant colors via K-Means, structural similarity |
+| 4 | [Simple Video Application](04%20-%20Computer%20Vision/00%20-%20Image%20Processing/4%20-%20Simple%20Video%20Application.ipynb) | Camera capture, writing video streams, drawing on video, live Canny sketch |
+| 5 | [Motion Tracking](04%20-%20Computer%20Vision/00%20-%20Image%20Processing/5%20-%20Motion%20Tracking.ipynb) | Lucas-Kanade and dense optical flow, Mean Shift and CamShift tracking |
+| 6 | [Colorization](04%20-%20Computer%20Vision/00%20-%20Image%20Processing/6%20-%20Colorization.ipynb) | Colorful Image Colorization — black-and-white to color as a classification task |
+
+#### Deep Learning for Vision
 
 | # | Notebook | Description |
 |---|----------|-------------|
@@ -149,11 +172,8 @@ Every notebook in this repository dissects a core AI concept by implementing it 
 
 | Topic | Description |
 |-------|-------------|
-| Training Strategy | Training data curation, loss functions, distributed training, and GPU programming |
-| Model Serving | vLLM, PagedAttention, autoscaling, and production deployment |
-| MLOps | Experiment tracking, model versioning, CI/CD for ML, monitoring, and drift detection |
-| LLM Benchmarks | MMLU, HumanEval, GSM8K — standardized evaluation and leaderboard methodology |
-| AI Governance | Red teaming, toxicity benchmarks, bias evaluation, hallucination detection |
+| Model Serving | vLLM, PagedAttention, prefill vs decode, autoscaling, and production deployment |
+| AI Governance & Security | Red teaming, toxicity benchmarks, bias evaluation, hallucination detection, adversarial robustness |
 
 ---
 
