@@ -42,54 +42,50 @@ Every notebook in this repository dissects a core AI concept by implementing it 
 
 | # | Notebook | Description |
 |---|----------|-------------|
-| 01 | [Vanilla RNN](03%20-%20Large%20Language%20Model/01%20-%20RNN/01%20-%20Vanila%20RNN.ipynb) | RNN cell from scratch — hidden states, BPTT, vanishing/exploding gradients |
-| 02 | [Recurrent Classifier](03%20-%20Large%20Language%20Model/01%20-%20RNN/02%20-%20Recurrent%20Classifier.ipynb) | Sentiment classification on IMDb using RNN/LSTM with padding and packing |
-| 03 | [RNN with Attention](03%20-%20Large%20Language%20Model/01%20-%20RNN/03%20-%20RNN%20with%20Attention.ipynb) | Seq2seq bottleneck problem, Bahdanau vs Luong attention for date format translation |
+| 01 | [Vanilla RNN](03%20-%20Large%20Language%20Model/01%20-%20RNN/01%20-%20Vanilla%20RNN.ipynb) | RNN, GRU and LSTM cells from scratch — hidden states, BPTT, vanishing/exploding gradients, character-level LM |
+| 02 | [RNN with Attention](03%20-%20Large%20Language%20Model/01%20-%20RNN/02%20-%20RNN%20with%20Attention.ipynb) | Seq2seq bottleneck problem, Bahdanau vs Luong attention for date format translation |
 
 #### Training Strategy
 
 | # | Notebook | Description |
 |---|----------|-------------|
-| 01 | [Data Processing](03%20-%20Large%20Language%20Model/02%20-%20Training%20Strategy%20/01%20-%20Data%20Processing.ipynb) | Pretraining data pipelines — heuristic filters, deduplication, CCNet perplexity and classifier quality filtering, data mixing and annealing |
-| 02 | [Distributed Training](03%20-%20Large%20Language%20Model/02%20-%20Training%20Strategy%20/02%20-%20Distributed%20Training.ipynb) | GPU programming to multi-GPU training — SIMT, memory hierarchy, roofline model, Triton kernels, profiling, DDP, tensor and pipeline parallelism |
+| 01 | [Data Processing](03%20-%20Large%20Language%20Model/02%20-%20Training%20Strategy/01%20-%20Data%20Processing.ipynb) | Pretraining data pipelines — heuristic filters, deduplication, CCNet perplexity and classifier quality filtering, data mixing and annealing |
+| 02 | [Distributed Training](03%20-%20Large%20Language%20Model/02%20-%20Training%20Strategy/02%20-%20Distributed%20Training.ipynb) | GPU programming to multi-GPU training — SIMT, memory hierarchy, roofline model, Triton kernels, profiling, DDP, tensor and pipeline parallelism |
 
 #### Transformer Models
 
 | # | Notebook | Description |
 |---|----------|-------------|
-| A01 | [Attention Mechanism](03%20-%20Large%20Language%20Model/03%20-%20Transformers%20Model/A01%20-%20Attention%20Mechanism.ipynb) | Self-attention and scaled dot-product, multi-head attention, Flash and sliding-window/sparse attention |
-| A02 | [Transformer](03%20-%20Large%20Language%20Model/03%20-%20Transformers%20Model/A02%20-%20Transformer.ipynb) | Full transformer architecture from scratch — masking, positional encoding, multi-head attention, encoder-decoder |
-| A03 | [Looped Transformer](03%20-%20Large%20Language%20Model/03%20-%20Transformers%20Model/A03%20-%20Looped%20Transformer.ipynb) | Recurrent-depth transformer — weight-shared looped blocks, truncated backprop, test-time compute scaling on parity |
-| B01 | [BERT](03%20-%20Large%20Language%20Model/03%20-%20Transformers%20Model/B01%20-%20BERT.ipynb.ipynb) | Bidirectional encoder — WordPiece tokenization, MLM, NSP, and the fine-tuning paradigm |
-| B02 | [ColBERT](03%20-%20Large%20Language%20Model/03%20-%20Transformers%20Model/B02%20-%20Colbert.ipynb) | Late interaction retrieval — MaxSim scoring, query augmentation, token-level matching |
-| C01 | [nanoGPT](03%20-%20Large%20Language%20Model/03%20-%20Transformers%20Model/C01%20-%20nanoGPT.ipynb) | GPT-2 from scratch — byte-level BPE tokenization, causal self-attention, autoregressive decoding |
-| C02 | [LLaMA](03%20-%20Large%20Language%20Model/03%20-%20Transformers%20Model/C02%20-%20LLama.ipynb) | LLaMA architecture deep dive — RMSNorm, RoPE, SwiGLU, grouped-query attention |
-| C03 | [Mistral MoE](03%20-%20Large%20Language%20Model/03%20-%20Transformers%20Model/C03%20-%20Mistral%20MoE.ipynb) | Mixture of Experts — sparse routing, expert parallelism, sliding window attention |
-| C04 | [DeepSeek](03%20-%20Large%20Language%20Model/03%20-%20Transformers%20Model/C04%20-%20DeepSeek.ipynb) | Multi-head Latent Attention (MLA) — 24x KV-cache reduction via low-rank compression |
-| C05 | [Qwen](03%20-%20Large%20Language%20Model/03%20-%20Transformers%20Model/C05%20-%20Qwen.ipynb) | Advanced RoPE scaling — Position Interpolation, NTK-Aware, Dynamic NTK, YaRN |
+| A01 | [Attention Mechanism](03%20-%20Large%20Language%20Model/03%20-%20Transformer%20Models/A01%20-%20Attention%20Mechanism.ipynb) | Self-attention and scaled dot-product, multi-head attention, Flash and sliding-window/sparse attention |
+| A02 | [Transformer](03%20-%20Large%20Language%20Model/03%20-%20Transformer%20Models/A02%20-%20Transformer.ipynb) | Full transformer architecture from scratch — masking, positional encoding, multi-head attention, encoder-decoder |
+| B01 | [BERT](03%20-%20Large%20Language%20Model/03%20-%20Transformer%20Models/B01%20-%20BERT.ipynb) | Bidirectional encoder — WordPiece tokenization, MLM, NSP, and the fine-tuning paradigm |
+| B02 | [ColBERT](03%20-%20Large%20Language%20Model/03%20-%20Transformer%20Models/B02%20-%20ColBERT.ipynb) | Late interaction retrieval — MaxSim scoring, query augmentation, token-level matching |
+| C01 | [nanoGPT](03%20-%20Large%20Language%20Model/03%20-%20Transformer%20Models/C01%20-%20nanoGPT.ipynb) | GPT-2 from scratch — byte-level BPE tokenization, causal self-attention, autoregressive decoding |
+| C02 | [LLaMA](03%20-%20Large%20Language%20Model/03%20-%20Transformer%20Models/C02%20-%20LLaMA.ipynb) | LLaMA architecture deep dive — RMSNorm, RoPE, SwiGLU, grouped-query attention |
+| C03 | [DeepSeek](03%20-%20Large%20Language%20Model/03%20-%20Transformer%20Models/C03%20-%20DeepSeek.ipynb) | Multi-head Latent Attention (MLA), fine-grained MoE with shared experts, multi-token prediction, mHC, compressed sparse attention |
+| C04 | [Qwen](03%20-%20Large%20Language%20Model/03%20-%20Transformer%20Models/C04%20-%20Qwen.ipynb) | Advanced RoPE scaling — Position Interpolation, NTK-Aware, Dynamic NTK, YaRN |
 
 #### Text Retrieval & NLP
 
 | # | Notebook | Description |
 |---|----------|-------------|
 | 01 | [Text Embedding](03%20-%20Large%20Language%20Model/04%20-%20Text%20Retrieval/01%20-%20Text%20Embedding.ipynb) | Cosine similarity, dot product, L2 distance — similarity metrics and embedding spaces |
-| 02 | [HNSW](03%20-%20Large%20Language%20Model/04%20-%20Text%20Retrieval/02%20-%20HNSW%20.ipynb) | Approximate nearest neighbors — HNSW, Product Quantization, IVF for vector search |
+| 02 | [HNSW](03%20-%20Large%20Language%20Model/04%20-%20Text%20Retrieval/02%20-%20HNSW.ipynb) | Approximate nearest neighbors — HNSW, Product Quantization, IVF for vector search |
 | 03 | [Topic Modeling](03%20-%20Large%20Language%20Model/04%20-%20Text%20Retrieval/03%20-%20Topic%20Modeling.ipynb) | Discovering latent topics from text corpora |
-| 04 | [NER](03%20-%20Large%20Language%20Model/04%20-%20Text%20Retrieval/04%20-%20NER.ipynb) | Named Entity Recognition — BIO tagging, CoNLL-2003, token classification |
-| 05 | [RAG](03%20-%20Large%20Language%20Model/04%20-%20Text%20Retrieval/05%20-%20RAG.ipynb) | Retrieval-Augmented Generation — chunking strategies, vector stores, retrieval pipeline |
-| 06 | [Advanced RAG](03%20-%20Large%20Language%20Model/04%20-%20Text%20Retrieval/06%20-%20Advanced%20RAG.ipynb) | Advanced retrieval techniques — re-ranking, hybrid search, query transformation |
+| 04 | [NER](03%20-%20Large%20Language%20Model/04%20-%20Text%20Retrieval/04%20-%20NER.ipynb) | Named Entity Recognition — BIO tagging, CoNLL-2003, BERT token classification, GLiNER zero-shot spans |
+| 05 | [RAG](03%20-%20Large%20Language%20Model/04%20-%20Text%20Retrieval/05%20-%20RAG.ipynb) | Retrieval-Augmented Generation — chunking, hybrid search, HyDE, RRF, Self-RAG/CRAG/agentic RAG, reranking, evaluation |
+| 06 | [Graph RAG](03%20-%20Large%20Language%20Model/04%20-%20Text%20Retrieval/06%20-%20Graph%20RAG.ipynb) | Knowledge-graph retrieval — LLM entity/relation extraction, entity linking, multi-hop graph traversal |
 
 #### Post-Training Alignment
 
 | # | Notebook | Description |
 |---|----------|-------------|
-| 01 | [Instruction Tuning](03%20-%20Large%20Language%20Model/05%20-%20Post%20Training%20Alignmnet/01%20-%20Instruction%20Tuning.ipynb) | Fine-tuning Pythia-2.8B on Dolly 15k — prompt formatting, loss masking on response tokens |
-| 02 | [SFT](03%20-%20Large%20Language%20Model/05%20-%20Post%20Training%20Alignmnet/02%20-%20SFT.ipynb) | Supervised Fine-Tuning — the first step after pretraining in the LLM pipeline |
-| 03 | [Reward Model](03%20-%20Large%20Language%20Model/05%20-%20Post%20Training%20Alignmnet/03%20-%20Reward%20Model.ipynb) | ORM vs PRM — Bradley-Terry loss, step-level credit assignment for reasoning |
-| 04 | [DPO vs ORPO and SimPO](03%20-%20Large%20Language%20Model/05%20-%20Post%20Training%20Alignmnet/04%20-%20DPO%20vs%20ORPO%20and%20SimPO.ipynb) | Direct Preference Optimization — aligning LLMs with human preferences without RL |
-| 05 | [GRPO with RLVR](03%20-%20Large%20Language%20Model/05%20-%20Post%20Training%20Alignmnet/05%20-%20GRPO%20with%20RLVR.ipynb) | Group Relative Policy Optimization — the algorithm behind DeepSeek-R1, with verifiable rewards |
-| 06 | [PEFT (LoRA / QLoRA)](03%20-%20Large%20Language%20Model/05%20-%20Post%20Training%20Alignmnet/06%20-%20Parameter%20Efficient%20Fine%20Tuning%20(PEFT).ipynb) | LoRA and QLoRA from scratch — low-rank adaptation, 4-bit quantization, 99.6% fewer parameters |
-| 07 | [Abliteration](03%20-%20Large%20Language%20Model/05%20-%20Post%20Training%20Alignmnet/07%20-%20Abliteration.ipynb) | Mechanistic interpretability — finding and removing the refusal direction in activation space |
+| 01 | [SFT](03%20-%20Large%20Language%20Model/05%20-%20Post-Training%20Alignment/01%20-%20SFT.ipynb) | Supervised Fine-Tuning — chat templates, conversational vs completion formats, assistant-only loss masking, packing |
+| 02 | [Reward Model](03%20-%20Large%20Language%20Model/05%20-%20Post-Training%20Alignment/02%20-%20Reward%20Model.ipynb) | ORM vs PRM — Bradley-Terry loss, step-level credit assignment for reasoning |
+| 03 | [DPO vs ORPO and SimPO](03%20-%20Large%20Language%20Model/05%20-%20Post-Training%20Alignment/03%20-%20DPO%20vs%20ORPO%20and%20SimPO.ipynb) | Direct Preference Optimization — aligning LLMs with human preferences without RL |
+| 04 | [GRPO with RLVR](03%20-%20Large%20Language%20Model/05%20-%20Post-Training%20Alignment/04%20-%20GRPO%20with%20RLVR.ipynb) | Group Relative Policy Optimization — the algorithm behind DeepSeek-R1, with verifiable rewards |
+| 05 | [PEFT (LoRA / QLoRA)](03%20-%20Large%20Language%20Model/05%20-%20Post-Training%20Alignment/05%20-%20Parameter-Efficient%20Fine-Tuning%20(PEFT).ipynb) | LoRA and QLoRA from scratch — low-rank adaptation, 4-bit quantization, 99.6% fewer parameters |
+| 06 | [Abliteration](03%20-%20Large%20Language%20Model/05%20-%20Post-Training%20Alignment/06%20-%20Abliteration.ipynb) | Mechanistic interpretability — finding and removing the refusal direction in activation space |
 
 #### Model Compression
 
@@ -103,29 +99,25 @@ Every notebook in this repository dissects a core AI concept by implementing it 
 
 | # | Notebook | Description |
 |---|----------|-------------|
-| A01 | [LLM Prompting](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A01%20-%20LLM_Prompting.ipynb) | Prompt design patterns, few-shot and CoT/ToT/GoT, structured output, prompt injection defenses, LLM-as-judge |
-| A02 | [LangChain](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A02%20-%20Langchain.ipynb) | LangChain fundamentals — loaders, splitters, vectorstores, retrievers, memory, chains, agents, and LCEL |
-| A03 | [Agent Harness](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A03%20-%20Agent%20Harness.ipynb) | The agent loop from scratch — tool system, planning, subagents, skills, context compaction, task system, agent teams |
-| A04 | [Agent Gateway](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A04%20-%20Agent%20Gateway.ipynb) | Intelligence layers (BASE → HEARTBEAT), channel abstraction, routing, cron, delivery queues, resilience, concurrency lanes |
-| A05 | [Agent Operation](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A05%20-%20Agent%20Operation.ipynb) | Running agents in production — observability, token budgeting, rate limiting, prompt caching, model routing, circuit breakers |
-| A06 | [Self Evolution Agent](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A06%20-%20Self%20Evolution%20Agent.ipynb) | Agents that improve themselves — Reflexion, self-rewarding evaluation, APE, and GEPA evolutionary prompt optimization |
-| A07 | [AI Agent Memory](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A07%20-%20AI%20Agent%20Memory.ipynb) | Memory architectures — Mem0 KV store, MemGPT/Letta tiers, Zep temporal knowledge graphs, hybrid retrieval, procedural memory |
-| A08 | [Sleep Time Consolidation](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A08%20-%20Sleep%20Time%20Consolidation.ipynb) | Offline compute for agents — sleep-time rethinking, dream consolidation, reflection, and Dynamic Cheatsheet |
-| B01 | [LangGraph Agent](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/B01%20-%20Langraph_Agent.ipynb) | Cyclic state graphs with LangGraph — ReAct, plan-and-execute, memory, multi-agent supervisors, MCP, LangSmith tracing |
-| B02 | [Claude Code](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/B02%20-%20Claude%20Code.ipynb) | Rebuilding Claude Code's harness — agent loop, tools, permissions, subagents, compaction, MCP, memory, hooks |
-| B03 | [Code Agent](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/B03%20-%20Code%20Agent.ipynb) | Multi-agent repository auditing — code knowledge graphs, structural detectors, inter-procedural data flow, LLM validators |
+| A01 | [LLM Prompting](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A01%20-%20LLM%20Prompting.ipynb) | Prompt design patterns, few-shot, CoT/self-consistency/ToT, structured output, prompt injection defenses |
+| A02 | [Agent Harness](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A02%20-%20Agent%20Harness.ipynb) | The agent loop from scratch — tool system, planning, subagents, skills, context compaction, task system, agent teams |
+| A03 | [Agent Operation](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A03%20-%20Agent%20Operation.ipynb) | Running agents in production — observability, token budgeting, rate limiting, prompt caching, model routing, circuit breakers |
+| A04 | [Self Evolution Agent](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A04%20-%20Self%20Evolution%20Agent.ipynb) | Agents that improve themselves — Reflexion, self-rewarding evaluation, APE, and GEPA evolutionary prompt optimization |
+| A05 | [AI Agent Memory](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A05%20-%20AI%20Agent%20Memory.ipynb) | Memory architectures — Mem0 KV store, MemGPT/Letta tiers, Zep temporal knowledge graphs, hybrid retrieval, consolidation, procedural memory |
+| B01 | [LangGraph Agent](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/B01%20-%20LangGraph%20Agent.ipynb) | Cyclic state graphs with LangGraph — ReAct, plan-and-execute, memory, multi-agent supervisors, MCP, LangSmith tracing |
+| B02 | [Code Agent](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/B02%20-%20Code%20Agent.ipynb) | Multi-agent repository auditing — code knowledge graphs, structural detectors, inter-procedural data flow, LLM validators |
 
 #### Production & Inference
 
 | # | Notebook | Description |
 |---|----------|-------------|
-| 01 | [Generation](03%20-%20Large%20Language%20Model/07%20-%20Production%20%26%20Inference/01%20-%20Generation.ipynb) | Text generation from scratch — KV-cache, greedy/beam/sampling, batched and continuous batching, speculative and constrained decoding |
+| 01 | [Generation](03%20-%20Large%20Language%20Model/08%20-%20Production%20%26%20Inference/01%20-%20Generation.ipynb) | Text generation from scratch — KV-cache, greedy/beam/sampling, batched and continuous batching, speculative and constrained decoding |
 
 #### LLM Evaluation
 
 | # | Notebook | Description |
 |---|----------|-------------|
-| 01 | [LLM Evaluation](03%20-%20Large%20Language%20Model/08%20-%20LLM%20Eval/01%20-%20LLM%20Evaluation.ipynb) | Perplexity, BLEU/ROUGE, BERTScore, calibration (ECE), LLM-as-a-judge with bias mitigation, and Elo ratings with bootstrap CIs |
+| 01 | [LLM Evaluation](03%20-%20Large%20Language%20Model/09%20-%20LLM%20Evaluation/01%20-%20LLM%20Evaluation.ipynb) | Perplexity, BLEU/ROUGE, BERTScore, calibration (ECE), LLM-as-a-judge with bias mitigation, and Elo ratings with bootstrap CIs |
 
 ### 04 - Computer Vision
 
@@ -136,24 +128,21 @@ Every notebook in this repository dissects a core AI concept by implementing it 
 | 1 | [Image Processing](04%20-%20Computer%20Vision/00%20-%20Image%20Processing/1%20-%20Image_Processing.ipynb) | OpenCV basics — I/O, drawing, blending, thresholding, blurring, morphology, color filtering |
 | 2 | [Image Detection](04%20-%20Computer%20Vision/00%20-%20Image%20Processing/2%20-%20Image%20Detection.ipynb) | Template matching, corners, Canny edges, contours, ORB feature matching, face and QR detection |
 | 3 | [Image Analysis](04%20-%20Computer%20Vision/00%20-%20Image%20Processing/3%20-%20Image%20Analysis.ipynb) | Histograms and equalization, dominant colors via K-Means, structural similarity |
-| 4 | [Simple Video Application](04%20-%20Computer%20Vision/00%20-%20Image%20Processing/4%20-%20Simple%20Video%20Application.ipynb) | Camera capture, writing video streams, drawing on video, live Canny sketch |
-| 5 | [Motion Tracking](04%20-%20Computer%20Vision/00%20-%20Image%20Processing/5%20-%20Motion%20Tracking.ipynb) | Lucas-Kanade and dense optical flow, Mean Shift and CamShift tracking |
-| 6 | [Colorization](04%20-%20Computer%20Vision/00%20-%20Image%20Processing/6%20-%20Colorization.ipynb) | Colorful Image Colorization — black-and-white to color as a classification task |
+| 4 | [Motion Tracking](04%20-%20Computer%20Vision/00%20-%20Image%20Processing/4%20-%20Motion%20Tracking.ipynb) | Lucas-Kanade and dense optical flow, Mean Shift and CamShift tracking |
 
 #### Deep Learning for Vision
 
 | # | Notebook | Description |
 |---|----------|-------------|
 | 01 | [CNN Foundations](04%20-%20Computer%20Vision/01%20-%20CNN%20Foundations.ipynb) | Convolutions from scratch in NumPy — zero-padding, forward/backward pass, pooling, and gradient derivations |
-| 02 | [CNN Architecture](04%20-%20Computer%20Vision/02%20-%20CNN%20Architecture.ipynb) | Baseline CNN to ResNet on FashionMNIST — vanishing gradients and why skip connections work |
-| 03 | [Transfer Learning](04%20-%20Computer%20Vision/03%20-%20Transfer%20Learning.ipynb) | Feature extraction vs fine-tuning on CIFAR-10 — ImageNet normalization, layer freezing strategies |
-| 04 | [Object Detection](04%20-%20Computer%20Vision/04%20-%20Object%20Detection.ipynb) | IoU, NMS, anchor box assignment, and YOLO output decoding — built from scratch |
-| 05 | [Image Segmentation](04%20-%20Computer%20Vision/05%20-%20Image%20Segmentation.ipynb) | U-Net encoder/decoder from scratch — skip connections, pixel-wise loss, SegFormer inference |
-| 06 | [Metric Learning](04%20-%20Computer%20Vision/06%20-%20Metric%20Learning.ipynb) | Siamese networks, contrastive loss, triplet loss, and FaceNet — embedding spaces for unseen classes |
-| 07 | [Vision Transformers](04%20-%20Computer%20Vision/07%20-%20Vision%20Transformers.ipynb) | ViT, DeiT, and Swin from scratch — patch embedding, multi-head self-attention, hierarchical windows |
-| 08 | [Contrastive Learning](04%20-%20Computer%20Vision/08%20-%20Constrastive%20Learning.ipynb) | SimCLR, CLIP, and DINOv2 — self-supervised pretraining with NT-Xent loss |
-| 09 | [Diffusion Model](04%20-%20Computer%20Vision/09%20-%20Diffusion%20Model.ipynb) | DDPM, DDIM, Stable Diffusion — forward/reverse process, noise schedules, ContextUNet |
-| 10 | [Model Explainability](04%20-%20Computer%20Vision/10%20-%20Model%20Explainability.ipynb) | Saliency maps, GradCAM, Integrated Gradients, and SHAP on ResNet-50 |
+| 02 | [Transfer Learning](04%20-%20Computer%20Vision/02%20-%20Transfer%20Learning.ipynb) | Feature extraction vs fine-tuning on CIFAR-10 — ImageNet normalization, layer freezing strategies |
+| 03 | [Object Detection](04%20-%20Computer%20Vision/03%20-%20Object%20Detection.ipynb) | IoU, NMS, anchor box assignment, and YOLO output decoding — built from scratch |
+| 04 | [Image Segmentation](04%20-%20Computer%20Vision/04%20-%20Image%20Segmentation.ipynb) | U-Net encoder/decoder from scratch — skip connections, pixel-wise loss, SegFormer inference |
+| 05 | [Metric Learning](04%20-%20Computer%20Vision/05%20-%20Metric%20Learning.ipynb) | Siamese networks, contrastive loss, triplet loss, and FaceNet — embedding spaces for unseen classes |
+| 06 | [Vision Transformers](04%20-%20Computer%20Vision/06%20-%20Vision%20Transformers.ipynb) | ViT, DeiT, and Swin from scratch — patch embedding, multi-head self-attention, hierarchical windows |
+| 07 | [Contrastive Learning](04%20-%20Computer%20Vision/07%20-%20Contrastive%20Learning.ipynb) | SimCLR, DINOv2, and CLIP vs SigLIP — self-supervised and image-text contrastive pretraining |
+| 08 | [Diffusion Model](04%20-%20Computer%20Vision/08%20-%20Diffusion%20Model.ipynb) | DDPM, DDIM, Stable Diffusion — forward/reverse process, noise schedules, ContextUNet |
+| 09 | [Model Explainability](04%20-%20Computer%20Vision/09%20-%20Model%20Explainability.ipynb) | Saliency maps, GradCAM, Integrated Gradients, and SHAP on ResNet-50 |
 
 ### 05 - Multi-Modal
 
