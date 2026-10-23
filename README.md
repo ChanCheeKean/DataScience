@@ -99,10 +99,10 @@ Every notebook in this repository dissects a core AI concept by implementing it 
 
 | # | Notebook | Description |
 |---|----------|-------------|
-| A01 | [LLM Prompting](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A01%20-%20LLM%20Prompting.ipynb) | Prompt design patterns, few-shot, CoT/self-consistency/ToT, structured output, prompt injection defenses |
+| A01 | [LLM Prompting](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A01%20-%20LLM%20Prompting.ipynb) | Prompt design patterns, few-shot, CoT/self-consistency, structured output, prompt injection defenses |
 | A02 | [Agent Harness](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A02%20-%20Agent%20Harness.ipynb) | The agent loop from scratch — tool system, planning, subagents, skills, context compaction, task system, agent teams |
-| A03 | [Agent Operation](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A03%20-%20Agent%20Operation.ipynb) | Running agents in production — observability, token budgeting, rate limiting, prompt caching, model routing, circuit breakers |
-| A04 | [Self Evolution Agent](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A04%20-%20Self%20Evolution%20Agent.ipynb) | Agents that improve themselves — Reflexion, self-rewarding evaluation, APE, and GEPA evolutionary prompt optimization |
+| A03 | [Agent Operation](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A03%20-%20Agent%20Operation.ipynb) | Running agents in production — observability, token budgeting, prompt caching, model routing, agent testing |
+| A04 | [Self Evolution Agent](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A04%20-%20Self%20Evolution%20Agent.ipynb) | Agents that improve themselves — Reflexion, GEPA evolutionary prompt optimization, skill evolution with constraint gates, ADAS |
 | A05 | [AI Agent Memory](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/A05%20-%20AI%20Agent%20Memory.ipynb) | Memory architectures — Mem0 KV store, MemGPT/Letta tiers, Zep temporal knowledge graphs, hybrid retrieval, consolidation, procedural memory |
 | B01 | [LangGraph Agent](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/B01%20-%20LangGraph%20Agent.ipynb) | Cyclic state graphs with LangGraph — ReAct, plan-and-execute, memory, multi-agent supervisors, MCP, LangSmith tracing |
 | B02 | [Code Agent](03%20-%20Large%20Language%20Model/07%20-%20Agentic%20LLM/B02%20-%20Code%20Agent.ipynb) | Multi-agent repository auditing — code knowledge graphs, structural detectors, inter-procedural data flow, LLM validators |
